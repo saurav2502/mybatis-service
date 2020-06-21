@@ -1,0 +1,14 @@
+server:
+  address: localhost
+  port: 8002
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: mybatis-app
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: dbAdmin
+    password: Admin@123
+    url: jdbc:mysql://localhost:3306/sys?allowMultiQueries=true

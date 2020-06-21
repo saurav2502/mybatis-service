@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.learn.spring.mybatisservice.dao.UserDao">
+    <resultMap id="BaseResultMap" type="com.learn.spring.mybatisservice.entity.UserInfo">
+        <id column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="user_contact" property="userContact" jdbcType="BIGINT"/>
+        <result column="user_email" property="userEmail" jdbcType="VARCHAR"/>
+    </resultMap>
+    <insert id="saveUserInfo">
+        insert into sys.user_info
+        (
+            user_name,
+            user_id,
+            user_contact,
+            user_email
+        ) values
+        (
+            #{userName},
+            #{userId},
+            #{userContact},
+            #{userEmail}
+        )
+    </insert>
+    <select id="getUserInfo" resultMap="BaseResultMap">
+        select u.user_name,
+                u.user_id,
+                u.user_contact,
+                u.user_email
+        from sys.user_info u
+        where (
+        <if test="userId != null">
+            u.user_id = #{userId}
+        </if>
+        <if test="userName != null">
+            or u.user_name = #{userName}
+        </if>
+        <if test="userEmail != null">
+            or u.user_email = #{userEmail}
+        </if>
+        <if test="userContact != null">
+            or u.user_contact = #{userContact}
+        </if>
+
+        )
+    </select>
+
+</mapper>
