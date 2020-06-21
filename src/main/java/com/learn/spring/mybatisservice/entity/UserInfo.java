@@ -1,5 +1,6 @@
 package com.learn.spring.mybatisservice.entity;
 
+
 import lombok.*;
 
 @Getter
@@ -7,6 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @NonNull
+@ToString
 public class UserInfo {
     private Long userId;
     private String userName;
