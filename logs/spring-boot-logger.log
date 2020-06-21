@@ -1155,3 +1155,158 @@ com.mysql.cj.exceptions.DataConversionException: Cannot determine value type fro
 2020-06-21 14:21:12,054 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
 2020-06-21 14:21:12,056 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
 2020-06-21 14:21:12,064 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-06-21 14:21:17,248 INFO org.springframework.boot.StartupInfoLogger [main] Starting MybatisServiceApplication on Saurav-Kumar with PID 2056 (D:\mybatis-service\target\classes started by Saurav Kumar in D:\mybatis-service)
+2020-06-21 14:21:17,248 INFO org.springframework.boot.StartupInfoLogger [main] Starting MybatisServiceApplication on Saurav-Kumar with PID 2056 (D:\mybatis-service\target\classes started by Saurav Kumar in D:\mybatis-service)
+2020-06-21 14:21:17,248 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-06-21 14:21:17,248 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-06-21 14:21:17,310 INFO org.springframework.boot.logging.DeferredLog [main] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-21 14:21:18,657 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8002 (http)
+2020-06-21 14:21:18,672 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-127.0.0.1-8002"]
+2020-06-21 14:21:18,672 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-06-21 14:21:18,672 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 14:21:18,754 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-06-21 14:21:18,754 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1444 ms
+2020-06-21 14:21:19,421 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-06-21 14:21:19,483 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-06-21 14:21:19,546 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 14:21:19,732 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-127.0.0.1-8002"]
+2020-06-21 14:21:19,748 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8002 (http) with context path ''
+2020-06-21 14:21:19,748 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2020-06-21 14:21:19,766 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2020-06-21 14:21:19,797 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2020-06-21 14:21:19,927 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2020-06-21 14:21:19,927 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2020-06-21 14:21:19,943 INFO org.springframework.boot.StartupInfoLogger [main] Started MybatisServiceApplication in 3.283 seconds (JVM running for 4.388)
+2020-06-21 14:21:19,943 INFO org.springframework.boot.StartupInfoLogger [main] Started MybatisServiceApplication in 3.283 seconds (JVM running for 4.388)
+2020-06-21 14:21:20,596 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(2)-192.168.1.4] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-21 14:21:20,596 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(1)-192.168.1.4] HikariPool-1 - Starting...
+2020-06-21 14:21:20,596 INFO org.springframework.web.servlet.FrameworkServlet [RMI TCP Connection(2)-192.168.1.4] Initializing Servlet 'dispatcherServlet'
+2020-06-21 14:21:20,596 INFO org.springframework.web.servlet.FrameworkServlet [RMI TCP Connection(2)-192.168.1.4] Completed initialization in 0 ms
+2020-06-21 14:21:20,721 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(1)-192.168.1.4] HikariPool-1 - Start completed.
+2020-06-21 15:10:22,509 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=24m1s213ms759µs600ns).
+2020-06-21 16:08:57,019 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=35m34s81ms854µs100ns).
+2020-06-21 16:31:42,722 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s275ms282µs100ns).
+2020-06-21 17:38:05,191 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=36m51s980ms32µs400ns).
+2020-06-21 17:46:14,126 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m8s934ms223µs700ns).
+2020-06-21 17:55:54,894 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m10s679ms625µs900ns).
+2020-06-21 18:20:54,212 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-21 18:20:54,215 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-06-21 18:20:54,222 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-06-21 18:21:09,368 INFO org.springframework.boot.StartupInfoLogger [main] Starting MybatisServiceApplication on Saurav-Kumar with PID 3124 (D:\mybatis-service\target\classes started by Saurav Kumar in D:\mybatis-service)
+2020-06-21 18:21:09,368 INFO org.springframework.boot.StartupInfoLogger [main] Starting MybatisServiceApplication on Saurav-Kumar with PID 3124 (D:\mybatis-service\target\classes started by Saurav Kumar in D:\mybatis-service)
+2020-06-21 18:21:09,369 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-06-21 18:21:09,369 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-06-21 18:21:09,370 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-06-21 18:21:09,370 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-06-21 18:21:09,430 INFO org.springframework.boot.logging.DeferredLog [main] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-21 18:21:11,090 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8002 (http)
+2020-06-21 18:21:11,100 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-127.0.0.1-8002"]
+2020-06-21 18:21:11,101 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-06-21 18:21:11,101 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-21 18:21:11,217 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-06-21 18:21:11,217 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1786 ms
+2020-06-21 18:21:12,132 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-06-21 18:21:12,188 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-06-21 18:21:12,260 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-21 18:21:12,451 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-127.0.0.1-8002"]
+2020-06-21 18:21:12,470 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8002 (http) with context path ''
+2020-06-21 18:21:12,470 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2020-06-21 18:21:12,493 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2020-06-21 18:21:12,529 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2020-06-21 18:21:12,543 INFO org.apache.juli.logging.DirectJDKLog [http-nio-127.0.0.1-8002-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-21 18:21:12,543 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-127.0.0.1-8002-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-06-21 18:21:12,550 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-127.0.0.1-8002-exec-1] Completed initialization in 7 ms
+2020-06-21 18:21:12,745 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2020-06-21 18:21:12,747 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2020-06-21 18:21:12,791 INFO org.springframework.boot.StartupInfoLogger [main] Started MybatisServiceApplication in 4.048 seconds (JVM running for 5.435)
+2020-06-21 18:21:12,791 INFO org.springframework.boot.StartupInfoLogger [main] Started MybatisServiceApplication in 4.048 seconds (JVM running for 5.435)
+2020-06-21 18:21:13,422 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(1)-192.168.1.3] HikariPool-1 - Starting...
+2020-06-21 18:21:13,645 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(1)-192.168.1.3] HikariPool-1 - Start completed.
+2020-06-21 18:22:02,683 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-9] ==>  Preparing: SELECT count(0) FROM sys.user_info
+2020-06-21 18:22:02,683 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-9] ==>  Preparing: SELECT count(0) FROM sys.user_info
+2020-06-21 18:22:02,708 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-9] ==> Parameters: 
+2020-06-21 18:22:02,708 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-9] ==> Parameters: 
+2020-06-21 18:22:02,733 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-9] <==      Total: 1
+2020-06-21 18:22:02,733 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-9] <==      Total: 1
+2020-06-21 18:22:02,736 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-9] ==>  Preparing: select * from sys.user_info LIMIT ?
+2020-06-21 18:22:02,736 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-9] ==>  Preparing: select * from sys.user_info LIMIT ?
+2020-06-21 18:22:02,737 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-9] ==> Parameters: 15(Integer)
+2020-06-21 18:22:02,737 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-9] ==> Parameters: 15(Integer)
+2020-06-21 18:22:02,740 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-9] <==      Total: 2
+2020-06-21 18:22:02,740 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-9] <==      Total: 2
+2020-06-21 18:24:11,875 INFO com.learn.spring.mybatisservice.controoler.MybatisController [http-nio-127.0.0.1-8002-exec-10] UserInfo: com.learn.spring.mybatisservice.entity.UserInfo@681e3bea
+2020-06-21 18:24:11,875 INFO com.learn.spring.mybatisservice.controoler.MybatisController [http-nio-127.0.0.1-8002-exec-10] UserInfo: com.learn.spring.mybatisservice.entity.UserInfo@681e3bea
+2020-06-21 18:24:16,235 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] ==>  Preparing: insert into sys.user_info ( user_name, user_id, user_contact, user_email ) values ( ?, ?, ?, ? )
+2020-06-21 18:24:16,235 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] ==>  Preparing: insert into sys.user_info ( user_name, user_id, user_contact, user_email ) values ( ?, ?, ?, ? )
+2020-06-21 18:24:16,237 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] ==> Parameters: user1(String), 1234566(Long), 7870459937(Long), abc@gmail.com(String)
+2020-06-21 18:24:16,237 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] ==> Parameters: user1(String), 1234566(Long), 7870459937(Long), abc@gmail.com(String)
+2020-06-21 18:24:16,292 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] <==    Updates: 1
+2020-06-21 18:24:16,292 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] <==    Updates: 1
+2020-06-21 18:24:45,120 INFO com.learn.spring.mybatisservice.controoler.MybatisController [http-nio-127.0.0.1-8002-exec-6] UserInfo: com.learn.spring.mybatisservice.entity.UserInfo@5e9615c6
+2020-06-21 18:24:45,120 INFO com.learn.spring.mybatisservice.controoler.MybatisController [http-nio-127.0.0.1-8002-exec-6] UserInfo: com.learn.spring.mybatisservice.entity.UserInfo@5e9615c6
+2020-06-21 18:24:45,122 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] ==>  Preparing: insert into sys.user_info ( user_name, user_id, user_contact, user_email ) values ( ?, ?, ?, ? )
+2020-06-21 18:24:45,122 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] ==>  Preparing: insert into sys.user_info ( user_name, user_id, user_contact, user_email ) values ( ?, ?, ?, ? )
+2020-06-21 18:24:45,125 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] ==> Parameters: user2(String), 1234567(Long), 7870459936(Long), abc1@gmail.com(String)
+2020-06-21 18:24:45,125 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] ==> Parameters: user2(String), 1234567(Long), 7870459936(Long), abc1@gmail.com(String)
+2020-06-21 18:24:45,180 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] <==    Updates: 1
+2020-06-21 18:24:45,180 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] <==    Updates: 1
+2020-06-21 18:25:05,286 INFO com.learn.spring.mybatisservice.controoler.MybatisController [http-nio-127.0.0.1-8002-exec-7] UserInfo: com.learn.spring.mybatisservice.entity.UserInfo@3377dfc1
+2020-06-21 18:25:05,286 INFO com.learn.spring.mybatisservice.controoler.MybatisController [http-nio-127.0.0.1-8002-exec-7] UserInfo: com.learn.spring.mybatisservice.entity.UserInfo@3377dfc1
+2020-06-21 18:25:05,286 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-7] ==>  Preparing: insert into sys.user_info ( user_name, user_id, user_contact, user_email ) values ( ?, ?, ?, ? )
+2020-06-21 18:25:05,286 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-7] ==>  Preparing: insert into sys.user_info ( user_name, user_id, user_contact, user_email ) values ( ?, ?, ?, ? )
+2020-06-21 18:25:05,286 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-7] ==> Parameters: user3(String), 1234568(Long), 7870459935(Long), abc3@gmail.com(String)
+2020-06-21 18:25:05,286 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-7] ==> Parameters: user3(String), 1234568(Long), 7870459935(Long), abc3@gmail.com(String)
+2020-06-21 18:25:05,347 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-7] <==    Updates: 1
+2020-06-21 18:25:05,347 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-7] <==    Updates: 1
+2020-06-21 18:25:27,787 INFO com.learn.spring.mybatisservice.controoler.MybatisController [http-nio-127.0.0.1-8002-exec-3] UserInfo: com.learn.spring.mybatisservice.entity.UserInfo@6568cb1b
+2020-06-21 18:25:27,787 INFO com.learn.spring.mybatisservice.controoler.MybatisController [http-nio-127.0.0.1-8002-exec-3] UserInfo: com.learn.spring.mybatisservice.entity.UserInfo@6568cb1b
+2020-06-21 18:25:27,789 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-3] ==>  Preparing: insert into sys.user_info ( user_name, user_id, user_contact, user_email ) values ( ?, ?, ?, ? )
+2020-06-21 18:25:27,789 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-3] ==>  Preparing: insert into sys.user_info ( user_name, user_id, user_contact, user_email ) values ( ?, ?, ?, ? )
+2020-06-21 18:25:27,791 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-3] ==> Parameters: user4(String), 1234569(Long), 7870459934(Long), abc4@gmail.com(String)
+2020-06-21 18:25:27,791 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-3] ==> Parameters: user4(String), 1234569(Long), 7870459934(Long), abc4@gmail.com(String)
+2020-06-21 18:25:27,833 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-3] <==    Updates: 1
+2020-06-21 18:25:27,833 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-3] <==    Updates: 1
+2020-06-21 18:25:45,107 INFO com.learn.spring.mybatisservice.controoler.MybatisController [http-nio-127.0.0.1-8002-exec-2] UserInfo: com.learn.spring.mybatisservice.entity.UserInfo@53021b6c
+2020-06-21 18:25:45,107 INFO com.learn.spring.mybatisservice.controoler.MybatisController [http-nio-127.0.0.1-8002-exec-2] UserInfo: com.learn.spring.mybatisservice.entity.UserInfo@53021b6c
+2020-06-21 18:25:45,109 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-2] ==>  Preparing: insert into sys.user_info ( user_name, user_id, user_contact, user_email ) values ( ?, ?, ?, ? )
+2020-06-21 18:25:45,109 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-2] ==>  Preparing: insert into sys.user_info ( user_name, user_id, user_contact, user_email ) values ( ?, ?, ?, ? )
+2020-06-21 18:25:45,110 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-2] ==> Parameters: user5(String), 1234570(Long), 7870459933(Long), abc5@gmail.com(String)
+2020-06-21 18:25:45,110 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-2] ==> Parameters: user5(String), 1234570(Long), 7870459933(Long), abc5@gmail.com(String)
+2020-06-21 18:25:45,161 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-2] <==    Updates: 1
+2020-06-21 18:25:45,161 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-2] <==    Updates: 1
+2020-06-21 18:26:00,249 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] ==>  Preparing: SELECT count(0) FROM sys.user_info
+2020-06-21 18:26:00,249 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] ==>  Preparing: SELECT count(0) FROM sys.user_info
+2020-06-21 18:26:00,250 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] ==> Parameters: 
+2020-06-21 18:26:00,250 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] ==> Parameters: 
+2020-06-21 18:26:00,256 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] <==      Total: 1
+2020-06-21 18:26:00,256 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] <==      Total: 1
+2020-06-21 18:26:00,258 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] ==>  Preparing: select * from sys.user_info LIMIT ?
+2020-06-21 18:26:00,258 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] ==>  Preparing: select * from sys.user_info LIMIT ?
+2020-06-21 18:26:00,260 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] ==> Parameters: 3(Integer)
+2020-06-21 18:26:00,260 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] ==> Parameters: 3(Integer)
+2020-06-21 18:26:00,263 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] <==      Total: 3
+2020-06-21 18:26:00,263 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-10] <==      Total: 3
+2020-06-21 18:27:02,872 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-1] ==>  Preparing: SELECT count(0) FROM sys.user_info
+2020-06-21 18:27:02,872 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-1] ==>  Preparing: SELECT count(0) FROM sys.user_info
+2020-06-21 18:27:02,875 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-1] ==> Parameters: 
+2020-06-21 18:27:02,875 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-1] ==> Parameters: 
+2020-06-21 18:27:02,879 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-1] <==      Total: 1
+2020-06-21 18:27:02,879 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-1] <==      Total: 1
+2020-06-21 18:27:02,883 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-1] ==>  Preparing: select * from sys.user_info LIMIT ?, ?
+2020-06-21 18:27:02,883 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-1] ==>  Preparing: select * from sys.user_info LIMIT ?, ?
+2020-06-21 18:27:02,885 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-1] ==> Parameters: 3(Integer), 3(Integer)
+2020-06-21 18:27:02,885 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-1] ==> Parameters: 3(Integer), 3(Integer)
+2020-06-21 18:27:02,893 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-1] <==      Total: 3
+2020-06-21 18:27:02,893 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-1] <==      Total: 3
+2020-06-21 18:27:12,740 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] ==>  Preparing: SELECT count(0) FROM sys.user_info
+2020-06-21 18:27:12,740 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] ==>  Preparing: SELECT count(0) FROM sys.user_info
+2020-06-21 18:27:12,742 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] ==> Parameters: 
+2020-06-21 18:27:12,742 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] ==> Parameters: 
+2020-06-21 18:27:12,742 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] <==      Total: 1
+2020-06-21 18:27:12,742 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] <==      Total: 1
+2020-06-21 18:27:12,747 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] ==>  Preparing: select * from sys.user_info LIMIT ?, ?
+2020-06-21 18:27:12,747 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] ==>  Preparing: select * from sys.user_info LIMIT ?, ?
+2020-06-21 18:27:12,749 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] ==> Parameters: 6(Integer), 3(Integer)
+2020-06-21 18:27:12,749 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] ==> Parameters: 6(Integer), 3(Integer)
+2020-06-21 18:27:12,751 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] <==      Total: 1
+2020-06-21 18:27:12,751 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-127.0.0.1-8002-exec-6] <==      Total: 1

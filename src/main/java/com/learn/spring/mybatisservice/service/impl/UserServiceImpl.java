@@ -1,12 +1,18 @@
 package com.learn.spring.mybatisservice.service.impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.learn.spring.mybatisservice.dao.UserDao;
 import com.learn.spring.mybatisservice.entity.UserInfo;
+import com.learn.spring.mybatisservice.response.PageResult;
+import com.learn.spring.mybatisservice.response.PageVO;
 import com.learn.spring.mybatisservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -46,5 +52,32 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserInfo getUserInfo(UserInfo user) {
         return userDao.getUserInfo(user);
+    }
+
+    /**
+     * author saurav
+     * description : to returns all user
+     * date 21/06/2020
+     * @param pageSize
+     * @param pageNum
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public PageResult<UserInfo> findAllUser(int pageSize, int pageNum) throws Exception {
+        Page page = PageHelper.startPage(pageNum, pageSize);
+        List<UserInfo> userInfos = new ArrayList<>() ;
+        try {
+            userInfos = userDao.findAllUser();
+        }catch (Exception e) {}
+        PageVO pageVO = new PageVO();
+        pageVO.setPageCurr(pageNum);
+        pageVO.setPageSize(pageSize);
+        pageVO.setStartPage(page.getStartRow()+1);
+        pageVO.setEndpage(page.getEndRow());
+        pageVO.setTotalRows(page.getTotal());
+        pageVO.setTotalPages(page.getPages());
+        PageResult<UserInfo> pageResult = new PageResult<>(userInfos,pageVO,UserInfo.class);
+        return pageResult;
     }
 }

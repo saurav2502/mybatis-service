@@ -45,5 +45,8 @@
 
         )
     </select>
+    <select id="findAllUser" resultMap="BaseResultMap">
+        select * from sys.user_info
+    </select>
 
 </mapper>

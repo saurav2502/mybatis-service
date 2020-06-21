@@ -1,6 +1,7 @@
 package com.learn.spring.mybatisservice.controoler;
 
 import com.learn.spring.mybatisservice.entity.UserInfo;
+import com.learn.spring.mybatisservice.response.PageResult;
 import com.learn.spring.mybatisservice.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,5 +29,10 @@ public class MybatisController {
     public Map<String, String> saveUserInfo(@RequestBody final UserInfo userInfo) throws Exception {
         logger.info("UserInfo: {}", userInfo.toString());
         return userService.saveUserInfo(userInfo);
+    }
+
+    @GetMapping("/findAllUser/{pageSize}/{pageNum}")
+    public PageResult<UserInfo> findAllUser(@PathVariable final int pageSize, @PathVariable final int pageNum) throws Exception {
+        return userService.findAllUser(pageSize,pageNum);
     }
 }
