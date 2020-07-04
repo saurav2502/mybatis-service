@@ -16,13 +16,16 @@ public class MybatisController {
 
     private static final Logger logger = LoggerFactory.getLogger(MybatisController.class);
 
-    @Autowired
     private UserService userService;
+
+    @Autowired
+    public MybatisController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("/getUserInfo")
     public UserInfo getUserInfo(final UserInfo user) {
-        UserInfo userInfo = userService.getUserInfo(user);
-        return userInfo;
+        return userService.getUserInfo(user);
     }
 
     @PostMapping("/saveUserInfo")

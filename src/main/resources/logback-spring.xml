@@ -39,7 +39,7 @@
     </root>
 
     <!-- LOG "com.example.userservice*" at TRACE level -->
-    <logger name="com.learn.spring.mybatisservice" level="debug" additivity="true">
+    <logger name="com.learn.spring" level="debug" additivity="true">
         <appender-ref ref="RollingFile"/>
         <appender-ref ref="Console"/>
     </logger>
