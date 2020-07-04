@@ -10,24 +10,20 @@
     </resultMap>
     <insert id="saveUserInfo">
         insert into sys.user_info
-        (
-            user_name,
-            user_id,
-            user_contact,
-            user_email
-        ) values
-        (
-            #{userName},
-            #{userId},
-            #{userContact},
-            #{userEmail}
-        )
+        (user_name,
+         user_id,
+         user_contact,
+         user_email)
+        values (#{userName},
+                #{userId},
+                #{userContact},
+                #{userEmail})
     </insert>
     <select id="getUserInfo" resultMap="BaseResultMap">
         select u.user_name,
-                u.user_id,
-                u.user_contact,
-                u.user_email
+        u.user_id,
+        u.user_contact,
+        u.user_email
         from sys.user_info u
         where (
         <if test="userId != null">
@@ -46,7 +42,34 @@
         )
     </select>
     <select id="findAllUser" resultMap="BaseResultMap">
-        select * from sys.user_info
+        select *
+        from sys.user_info
+    </select>
+    <select id="findUserById" resultMap="BaseResultMap">
+        select *
+        from sys.user_info u
+        where u.user_id = #{id}
+    </select>
+    <select id="findUserInfo" resultMap="BaseResultMap">
+        select * from user_info u
+        where u.user_id in
+        <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+    <sql id="user_data">
+        ${alias}.user_id,
+        ${alias}.user_name,
+        ${alias}.user_contact,
+        ${alias}.user_email
+    </sql>
+    <select id="getUserData" resultMap="BaseResultMap">
+        select 
+            <include refid="user_data">
+                <property name="alias" value="u"/>
+            </include>
+        from user_info u
+        where u.user_id = #{id}
     </select>
 
 </mapper>

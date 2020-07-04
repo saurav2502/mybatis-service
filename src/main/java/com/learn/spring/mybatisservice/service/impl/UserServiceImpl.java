@@ -7,6 +7,8 @@ import com.learn.spring.mybatisservice.entity.UserInfo;
 import com.learn.spring.mybatisservice.response.PageResult;
 import com.learn.spring.mybatisservice.response.PageVO;
 import com.learn.spring.mybatisservice.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,7 @@ import java.util.Map;
 
 @Service
 public class UserServiceImpl implements UserService {
+    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     private static final String ret_succ_msg = "Success";
     private static final String ret_failure_msg = "fail";
@@ -25,13 +28,17 @@ public class UserServiceImpl implements UserService {
     private static final String ret_exception_message = "SQL fail to insert";
     private static final String ret_exception_code = "SQL TRACE 1099";
 
+    private final UserDao userDao;
+
     @Autowired
-    private UserDao userDao;
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
     @Override
     public Map<String, String> saveUserInfo(UserInfo userInfo) throws Exception {
         Map<String, String>ret = new HashMap<>();
-        int counter = 0;
+        int counter;
         try {
             counter = userDao.saveUserInfo(userInfo);
             if (counter > 0) {
@@ -58,18 +65,19 @@ public class UserServiceImpl implements UserService {
      * author saurav
      * description : to returns all user
      * date 21/06/2020
-     * @param pageSize
-     * @param pageNum
-     * @return
-     * @throws Exception
+     * @param pageSize page size
+     * @param pageNum page number
+     * @return all users
      */
     @Override
-    public PageResult<UserInfo> findAllUser(int pageSize, int pageNum) throws Exception {
+    public PageResult<UserInfo> findAllUser(int pageSize, int pageNum) {
         Page page = PageHelper.startPage(pageNum, pageSize);
         List<UserInfo> userInfos = new ArrayList<>() ;
         try {
             userInfos = userDao.findAllUser();
-        }catch (Exception e) {}
+        }catch (Exception e) {
+            logger.info("Find User queries failed");
+        }
         PageVO pageVO = new PageVO();
         pageVO.setPageCurr(pageNum);
         pageVO.setPageSize(pageSize);
@@ -79,5 +87,26 @@ public class UserServiceImpl implements UserService {
         pageVO.setTotalPages(page.getPages());
         PageResult<UserInfo> pageResult = new PageResult<>(userInfos,pageVO,UserInfo.class);
         return pageResult;
+    }
+
+    /**
+     * @param userId
+     * @return userinfo
+     * @author saurav
+     */
+    @Override
+    public UserInfo findUserById(Long userId) {
+        //return userDao.findUserById(userId);
+        return userDao.getUserData(userId);
+    }
+
+    /**
+     * @param userIds
+     * @return userinfo
+     * @author saurav
+     */
+    @Override
+    public List<UserInfo> findUserInfo(List<Long> userIds) {
+        return userDao.findUserInfo(userIds);
     }
 }
