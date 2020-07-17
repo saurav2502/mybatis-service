@@ -3,6 +3,7 @@ package com.learn.spring.mybatisservice.service.impl;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.learn.spring.mybatisservice.dao.UserDao;
+import com.learn.spring.mybatisservice.entity.User;
 import com.learn.spring.mybatisservice.entity.UserInfo;
 import com.learn.spring.mybatisservice.response.PageResult;
 import com.learn.spring.mybatisservice.response.PageVO;
@@ -10,16 +11,22 @@ import com.learn.spring.mybatisservice.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class UserServiceImpl implements UserService {
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+    private final RestTemplate restTemplate;
 
     private static final String ret_succ_msg = "Success";
     private static final String ret_failure_msg = "fail";
@@ -31,7 +38,8 @@ public class UserServiceImpl implements UserService {
     private final UserDao userDao;
 
     @Autowired
-    public UserServiceImpl(UserDao userDao) {
+    public UserServiceImpl(RestTemplateBuilder restTemplate, UserDao userDao) {
+        this.restTemplate = restTemplate.build();
         this.userDao = userDao;
     }
 
@@ -78,6 +86,13 @@ public class UserServiceImpl implements UserService {
         }catch (Exception e) {
             logger.info("Find User queries failed");
         }
+        PageVO pageVO = getPageVO(pageSize, pageNum, page);
+        PageResult<UserInfo> pageResult = new PageResult<>(userInfos,pageVO,UserInfo.class);
+        return pageResult;
+    }
+
+    @NotNull
+    private PageVO getPageVO(int pageSize, int pageNum, Page page) {
         PageVO pageVO = new PageVO();
         pageVO.setPageCurr(pageNum);
         pageVO.setPageSize(pageSize);
@@ -85,8 +100,7 @@ public class UserServiceImpl implements UserService {
         pageVO.setEndpage(page.getEndRow());
         pageVO.setTotalRows(page.getTotal());
         pageVO.setTotalPages(page.getPages());
-        PageResult<UserInfo> pageResult = new PageResult<>(userInfos,pageVO,UserInfo.class);
-        return pageResult;
+        return pageVO;
     }
 
     /**
@@ -108,5 +122,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserInfo> findUserInfo(List<Long> userIds) {
         return userDao.findUserInfo(userIds);
+    }
+
+    @Override
+    @Async
+    public CompletableFuture<User> findUserAsync(String user) throws InterruptedException {
+        logger.info("Lookup " + user);
+        String url = String.format("https://api.github.com/users/%s", user);
+        User results = restTemplate.getForObject(url, User.class);
+        Thread.sleep(1000L);
+        return CompletableFuture.completedFuture(results);
     }
 }

@@ -1,7 +1,12 @@
 package com.learn.spring.mybatisservice.entity;
 
-
 import lombok.*;
+
+/**
+ * @author Saurav Kumar
+ * @project mybatis-service
+ * @since 7/15/2020
+ */
 
 @Getter
 @Setter
@@ -9,11 +14,7 @@ import lombok.*;
 @AllArgsConstructor
 @NonNull
 @ToString
-public class UserInfo {
-    private Long userId;
-    private String userName;
-    private Long userContact;
-    private String userEmail;
+public class User {
     private String name;
     private String blog;
 }

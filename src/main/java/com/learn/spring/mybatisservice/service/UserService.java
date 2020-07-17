@@ -1,10 +1,12 @@
 package com.learn.spring.mybatisservice.service;
 
+import com.learn.spring.mybatisservice.entity.User;
 import com.learn.spring.mybatisservice.entity.UserInfo;
 import com.learn.spring.mybatisservice.response.PageResult;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 public interface UserService {
     Map<String, String> saveUserInfo(UserInfo userInfo) throws Exception;
@@ -36,4 +38,5 @@ public interface UserService {
      */
     List<UserInfo> findUserInfo(List<Long> userIds);
 
+    CompletableFuture<User> findUserAsync(String user) throws InterruptedException;
 }
