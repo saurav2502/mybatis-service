@@ -9,7 +9,7 @@
         <result column="user_email" property="userEmail" jdbcType="VARCHAR"/>
     </resultMap>
     <insert id="saveUserInfo">
-        insert into sys.user_info
+        insert into sys.users
         (user_name,
          user_id,
          user_contact,
@@ -24,7 +24,7 @@
         u.user_id,
         u.user_contact,
         u.user_email
-        from sys.user_info u
+        from sys.users u
         where (
         <if test="userId != null">
             u.user_id = #{userId}
@@ -43,15 +43,15 @@
     </select>
     <select id="findAllUser" resultMap="BaseResultMap">
         select *
-        from sys.user_info
+        from sys.users
     </select>
     <select id="findUserById" resultMap="BaseResultMap">
         select *
-        from sys.user_info u
+        from sys.users u
         where u.user_id = #{id}
     </select>
     <select id="findUserInfo" resultMap="BaseResultMap">
-        select * from user_info u
+        select * from users u
         where u.user_id in
         <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">
             #{item}
@@ -68,8 +68,17 @@
             <include refid="user_data">
                 <property name="alias" value="u"/>
             </include>
-        from user_info u
+        from users u
         where u.user_id = #{id}
+    </select>
+    <select id="getImageUrls" resultType="java.lang.String">
+        select t.image_url as image
+        FROM sys.image t
+        where t.id in
+        <foreach collection="imageIds" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        LIMIT 501
     </select>
 
 </mapper>

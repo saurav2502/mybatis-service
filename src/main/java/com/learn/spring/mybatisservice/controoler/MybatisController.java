@@ -8,11 +8,23 @@ import com.learn.spring.mybatisservice.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.FileCopyUtils;
+import org.springframework.util.ObjectUtils;
+import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.net.URLConnection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 @RestController
 @RequestMapping("/mybatis-service")
@@ -69,12 +81,6 @@ public class MybatisController {
         return userService.findUserInfo(userIds);
     }
 
-    @GetMapping("/zip")
-    public void zipList() {
-        List<String> list1 = List.of("java-8","java-11","java-14");
-        List<Integer> list2 = List.of(2014,2018,2020);
-    }
-
     @GetMapping("/async")
     public CompletableFuture<User>findUserAsync(@RequestParam final String user) throws Exception {
         CompletableFuture<User> page1 = userService.findUserAsync("PivotalSoftware");
@@ -85,5 +91,66 @@ public class MybatisController {
         logger.info("--> " + page2.get());
         logger.info("--> " + page3.get());
         return userService.findUserAsync(user);
+    }
+    private static final String EXTENSION = ".docx";
+    private static final String SERVER_LOCATION = "C:/Users/Saurav Kumar/OneDrive";
+
+    @GetMapping("/download")
+    public ResponseEntity fileDownload(@RequestParam("file1") String file1, HttpServletResponse response) throws IOException {
+
+        /*File file = new File(SERVER_LOCATION + File.separator + file1 + EXTENSION);
+        String mimeType = URLConnection.guessContentTypeFromName(file.getName());
+        HttpHeaders header = new HttpHeaders();
+        header.add(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=fil1.docx ");
+        header.add("Cache-Control", "no-cache, no-store, must-revalidate");
+        header.add("Pragma", "no-cache");
+        header.add("Expires", "0");
+
+        Path path = Paths.get(file.getAbsolutePath());
+        ByteArrayResource resource = new ByteArrayResource(Files.readAllBytes(path));
+
+        return ResponseEntity.ok()
+                .headers(header)
+                .contentLength(file.length())
+                .contentType(MediaType.parseMediaType("application/octet-stream"))
+                .body(resource);*/
+        File file = new File(SERVER_LOCATION+ File.separator + file1 + EXTENSION);
+        if (file.exists()) {
+            String mimeType = URLConnection.guessContentTypeFromName(file.getName());
+            if (null==mimeType) {
+                mimeType = "application/octet-stream";
+            }
+            response.setContentType(mimeType);
+            response.setHeader("Content-Disposition",String.format("inline; filename=\"" + file.getName() + "\""));
+            response.setContentLength((int) file.length());
+            InputStream inputStream = new BufferedInputStream(new FileInputStream(file));
+
+            FileCopyUtils.copy(inputStream, response.getOutputStream());
+
+        }
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @GetMapping("/zipDownload")
+    public ResponseEntity zipDownload (@RequestParam("imageIds") final List<String> imageIds, HttpServletResponse response )throws Exception {
+        ZipOutputStream zipOut = new ZipOutputStream(response.getOutputStream());
+        if (!ObjectUtils.isEmpty(imageIds)) {
+            List<String>imageUrls = userService.findImageUrls(imageIds);
+            if (!ObjectUtils.isEmpty(imageUrls)) {
+                for (String imageUrl : imageUrls) {
+                    FileSystemResource resource = new FileSystemResource(imageUrl);
+                    ZipEntry zipEntry = new ZipEntry(resource.getFilename());
+                    zipEntry.setSize(resource.contentLength());
+                    zipOut.putNextEntry(zipEntry);
+                    StreamUtils.copy(resource.getInputStream(), zipOut);
+                    zipOut.closeEntry();
+                }
+                zipOut.finish();
+                zipOut.close();
+                response.setStatus(HttpServletResponse.SC_OK);
+                response.addHeader(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + "zipFileName" + "\"");
+            }
+        }
+        return new ResponseEntity(HttpStatus.OK);
     }
 }

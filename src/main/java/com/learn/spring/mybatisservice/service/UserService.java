@@ -39,4 +39,6 @@ public interface UserService {
     List<UserInfo> findUserInfo(List<Long> userIds);
 
     CompletableFuture<User> findUserAsync(String user) throws InterruptedException;
+
+    List<String> findImageUrls(List<String> imageIds);
 }

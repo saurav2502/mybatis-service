@@ -21,4 +21,5 @@ public interface UserDao {
 
     UserInfo getUserData(@Param("id") Long userId);
 
+    List<String> getImageUrls(@Param("imageIds") List<String> imageIds);
 }

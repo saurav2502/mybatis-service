@@ -133,4 +133,9 @@ public class UserServiceImpl implements UserService {
         Thread.sleep(1000L);
         return CompletableFuture.completedFuture(results);
     }
+
+    @Override
+    public List<String> findImageUrls(List<String> imageIds) {
+        return userDao.getImageUrls(imageIds);
+    }
 }
