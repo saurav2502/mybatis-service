@@ -1,13 +1,18 @@
 package com.learn.spring.mybatisservice.controoler;
 
 import com.learn.spring.mybatisservice.common.exception.IdNotFoundException;
+import com.learn.spring.mybatisservice.entity.BannerXmlVO;
+import com.learn.spring.mybatisservice.entity.DimensionVO;
 import com.learn.spring.mybatisservice.entity.User;
 import com.learn.spring.mybatisservice.entity.UserInfo;
 import com.learn.spring.mybatisservice.response.PageResult;
+import com.learn.spring.mybatisservice.response.ResultResponse;
 import com.learn.spring.mybatisservice.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -18,8 +23,12 @@ import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import java.io.*;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -33,6 +42,9 @@ public class MybatisController {
     private static final Logger logger = LoggerFactory.getLogger(MybatisController.class);
 
     private UserService userService;
+
+    @Value("${outputPath}")
+    String outputPath;
 
     @Autowired
     public MybatisController(UserService userService) {
@@ -68,6 +80,7 @@ public class MybatisController {
         return userService.findAllUser(pageSize,pageNum);
     }
 
+    @Cacheable(value = "user", key = "#userId", unless = "#result.userId < 12000")
     @GetMapping("/findUserById")
     public UserInfo findUserById (@RequestParam(value = "userId", required = true) final Long userId) {
         UserInfo info = userService.findUserById(userId);
@@ -152,5 +165,49 @@ public class MybatisController {
             }
         }
         return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @PostMapping("/banner/{bannerId}")
+    public ResultResponse<BannerXmlVO> getBanner(@RequestBody BannerXmlVO banner, @PathVariable("bannerId") Integer bannerId) throws JAXBException, FileNotFoundException {
+        if (!ObjectUtils.isEmpty(banner)){
+            banner.setOutputPath(outputPath);
+            List<DimensionVO>dimesion = new ArrayList<>();
+            for (DimensionVO vo: banner.getElements()){
+                vo.setImageUrl(banner.getImageUrl());
+                vo.setLogoUrls(banner.getImageLogo());
+                vo.setMainTitle(banner.getHeadings().getMainText());
+                vo.setSubTitle(banner.getHeadings().getSubtitle());
+                vo.setDescription(banner.getHeadings().getSummary());
+                dimesion.add(vo);
+            }
+            banner.setElements(dimesion);
+            /*banner.setImageLogo(null);
+            banner.setImageUrl(null);*/
+
+            JAXBContext contextObj = null;
+            try {
+                contextObj = JAXBContext.newInstance(BannerXmlVO.class);
+            } catch (JAXBException e) {
+                e.printStackTrace();
+            }
+            Marshaller marshallerObj = contextObj.createMarshaller();
+            marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            //Print XML String to Console
+            StringWriter sw = new StringWriter();
+
+            //Write XML to StringWriter
+            marshallerObj.marshal(banner, sw);
+            //Verify XML Content
+            String xmlContent = sw.toString();
+            System.out.println( xmlContent );
+            marshallerObj.marshal(banner, new FileOutputStream("banner.xml"));
+            File file = new File(outputPath);
+            if (file.exists()) {
+
+            }else {
+                System.out.printf("File dir does not exists");
+            }
+        }
+        return new ResultResponse<BannerXmlVO>('S',"Success", HttpStatus.OK,banner);
     }
 }

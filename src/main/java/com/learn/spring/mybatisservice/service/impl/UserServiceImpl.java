@@ -26,6 +26,7 @@ import java.util.concurrent.CompletableFuture;
 @Service
 public class UserServiceImpl implements UserService {
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+
     private final RestTemplate restTemplate;
 
     private static final String ret_succ_msg = "Success";
@@ -138,4 +139,5 @@ public class UserServiceImpl implements UserService {
     public List<String> findImageUrls(List<String> imageIds) {
         return userDao.getImageUrls(imageIds);
     }
+
 }

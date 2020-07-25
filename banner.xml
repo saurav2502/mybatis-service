@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<IntelligentAttribute height="1920" outputPath="D:/demo/" width="1080">
+    <element description="Whats up" dimension="1080*1920" height="1920" imageUrls="E:/demo" logoUrls="E:/demo" mainTitle="Hi" subTitle="Hello" width="1080"/>
+    <element description="Whats up" dimension="1080*720" height="720" imageUrls="E:/demo" logoUrls="E:/demo" mainTitle="Hi" subTitle="Hello" width="1080"/>
+</IntelligentAttribute>
