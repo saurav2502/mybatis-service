@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.learn.spring.mybatisservice.dao.UserInfoDao">
+
+  <insert id="insert">
+    insert into sys.users(
+                          user_id,
+                          user_name,
+                          user_email,
+                          user_contact,
+                          create_date
+                          )
+    VALUES (
+             #{userInfo.userID},
+             #{userInfo.userName},
+             #{userInfo.userEmail},
+             #{userInfo.userContact},
+             now()
+           )
+  </insert>
+</mapper>

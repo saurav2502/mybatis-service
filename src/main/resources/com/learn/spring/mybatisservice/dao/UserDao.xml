@@ -19,6 +19,13 @@
                 #{userContact},
                 #{userEmail})
     </insert>
+    <insert id="updateDB" parameterType="map">
+        INSERT  into sys.users(user_id, user_name)values
+        (
+            #{maps.getKey()},
+            #{maps.values()}
+        )
+    </insert>
     <select id="getUserInfo" resultMap="BaseResultMap">
         select u.user_name,
         u.user_id,

@@ -42,4 +42,6 @@ public interface UserService {
 
     List<String> findImageUrls(List<String> imageIds);
 
+    int updateDB(Map<Integer, List<String>> maps);
+
 }

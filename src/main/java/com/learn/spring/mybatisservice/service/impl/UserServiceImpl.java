@@ -17,10 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
 @Service
@@ -140,4 +137,18 @@ public class UserServiceImpl implements UserService {
         return userDao.getImageUrls(imageIds);
     }
 
+    @Override
+    public int updateDB(Map<Integer, List<String>> maps) {
+        for (Map.Entry<Integer, List<String>>set: maps.entrySet()) {
+            System.out.println(set.getKey() +" -> " + maps.values());
+        }
+        int data = 0;
+        try {
+            for (Map.Entry<Integer, List<String>>mapping:maps.entrySet())
+            data = userDao.updateDB(maps);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
 }

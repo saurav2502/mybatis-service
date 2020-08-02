@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface UserDao {
@@ -22,4 +23,6 @@ public interface UserDao {
     UserInfo getUserData(@Param("id") Long userId);
 
     List<String> getImageUrls(@Param("imageIds") List<String> imageIds);
+
+    int updateDB(@Param("maps") Map<Integer, List<String>> maps);
 }

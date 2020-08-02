@@ -41,6 +41,6 @@
     <!-- LOG "com.example.userservice*" at TRACE level -->
     <logger name="com.learn.spring" level="debug" additivity="true">
         <appender-ref ref="RollingFile"/>
-        <appender-ref ref="Console"/>
+        <!--<appender-ref ref="Console"/>-->
     </logger>
 </configuration>
