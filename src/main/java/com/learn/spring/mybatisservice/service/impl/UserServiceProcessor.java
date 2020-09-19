@@ -24,7 +24,7 @@ public class UserServiceProcessor implements Callable<Boolean> {
     private static final Logger logger = LoggerFactory.getLogger(UserServiceProcessor.class);
 
     /** userInfo class for thread processor */
-    private UserInfoData userInfo;
+    private final UserInfoData userInfo;
 
     /**
      * constructor

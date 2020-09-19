@@ -8,6 +8,10 @@ package com.learn.spring.mybatisservice.entity;
  */
 public class Users {
     /**
+     * ID
+     */
+    private int ID;
+    /**
      * contains user id
      */
     private String userID;
@@ -59,16 +63,26 @@ public class Users {
         this.userContact = userContact;
     }
 
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
     /**
      * {@utility method}
      * @return
      */
     @Override public String toString() {
-        return "Users{" +
-            "userID='" + userID + '\'' +
-            ", userName='" + userName + '\'' +
-            ", userEmail='" + userEmail + '\'' +
-            ", userContact='" + userContact + '\'' +
-            '}';
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Users{");
+        stringBuilder.append("userID=" + userID);
+        stringBuilder.append(", userName=" +userName);
+        stringBuilder.append(", userEmail="+userEmail);
+        stringBuilder.append(", userContact="+userContact);
+        stringBuilder.append("}");
+        return stringBuilder.toString();
     }
 }

@@ -1,6 +1,9 @@
 package com.learn.spring.mybatisservice.dao;
 
+import com.learn.spring.mybatisservice.entity.IndusTypeInfo;
 import com.learn.spring.mybatisservice.entity.UserInfoData;
+import com.learn.spring.mybatisservice.entity.Users;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -18,4 +21,18 @@ public interface UserInfoDao {
      * @return
      */
     int insert(@Param("userInfo") UserInfoData userInfo);
+
+    /**
+     * returning all industry
+     *
+     * @return
+     */
+    List<IndusTypeInfo> getAllIndustry();
+
+    /**
+     * getGeneratedKey
+     * @param users
+     * @return
+     */
+    int getGeneratedKey(Users users);
 }

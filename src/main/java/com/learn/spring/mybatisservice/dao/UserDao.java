@@ -1,6 +1,7 @@
 package com.learn.spring.mybatisservice.dao;
 
 import com.learn.spring.mybatisservice.entity.UserInfo;
+import com.learn.spring.mybatisservice.entity.Users;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -25,4 +26,6 @@ public interface UserDao {
     List<String> getImageUrls(@Param("imageIds") List<String> imageIds);
 
     int updateDB(@Param("maps") Map<Integer, List<String>> maps);
+
+    List<Users> findAllUserData();
 }

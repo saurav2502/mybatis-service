@@ -1,5 +1,8 @@
 package com.learn.spring.mybatisservice;
 
+import com.learn.spring.mybatisservice.common.cache.StaticCacheConfig;
+import java.util.ArrayList;
+import java.util.List;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -30,6 +33,23 @@ public class MybatisServiceApplication {
         executor.setThreadNamePrefix("GithubLookup-");
         executor.initialize();
         return executor;
+    }
+
+    @Bean
+    public List<String> cacheConfig() {
+        List<String> cacheList = new ArrayList<>();
+        cacheList.add("staticCacheConfig");
+        cacheList.add("initializeCache");
+        return cacheList;
+    }
+
+    @Bean(initMethod = "loadUserCache")
+    public StaticCacheConfig userCache() {
+        return new StaticCacheConfig();
+    }
+    @Bean(initMethod = "loadDimensionCache")
+    public StaticCacheConfig dimensionCache() {
+        return new StaticCacheConfig();
     }
 
 }

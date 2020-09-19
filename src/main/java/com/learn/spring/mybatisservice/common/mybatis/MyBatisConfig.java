@@ -1,4 +1,8 @@
-package com.learn.spring.mybatisservice.common;
+/*
+ * Copy right from Saurav kumar
+ */
+
+package com.learn.spring.mybatisservice.common.mybatis;
 
 import com.github.pagehelper.PageInterceptor;
 import org.springframework.context.annotation.Bean;

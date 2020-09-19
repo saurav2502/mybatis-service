@@ -4,19 +4,31 @@
 <mapper namespace="com.learn.spring.mybatisservice.dao.UserInfoDao">
 
   <insert id="insert">
-    insert into sys.users(
-                          user_id,
+    insert into sys.users(user_id,
                           user_name,
                           user_email,
                           user_contact,
-                          create_date
-                          )
-    VALUES (
-             #{userInfo.userID},
-             #{userInfo.userName},
-             #{userInfo.userEmail},
-             #{userInfo.userContact},
-             now()
-           )
+                          create_date)
+    VALUES (#{userInfo.userID},
+            #{userInfo.userName},
+            #{userInfo.userEmail},
+            #{userInfo.userContact},
+            now())
+  </insert>
+  <resultMap id="industryInfoMap" type="com.learn.spring.mybatisservice.entity.IndusTypeInfo">
+    <id column="industry_id" jdbcType="BIGINT" property="indusTypeId"/>
+    <result column="industry_name" property="indusTypeName"/>
+  </resultMap>
+  <select id="getAllIndustry" resultMap="industryInfoMap">
+    select *
+    from industry_type_info
+  </select>
+
+  <insert id="getGeneratedKey" useGeneratedKeys="true" keyColumn="id" keyProperty="ID" >
+    insert into users(user_id, user_name, user_contact, user_email)
+    values (#{userID,jdbcType=VARCHAR},
+             #{userName,jdbcType=VARCHAR},
+            #{userContact,jdbcType=VARCHAR},
+            #{userEmail,jdbcType=VARCHAR})
   </insert>
 </mapper>

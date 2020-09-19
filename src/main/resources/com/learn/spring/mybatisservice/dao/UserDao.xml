@@ -68,7 +68,7 @@
         ${alias}.user_id,
         ${alias}.user_name,
         ${alias}.user_contact,
-        ${alias}.user_email
+        ${alias}.user_email<!--@sql from users u -->
     </sql>
     <select id="getUserData" resultMap="BaseResultMap">
         select 

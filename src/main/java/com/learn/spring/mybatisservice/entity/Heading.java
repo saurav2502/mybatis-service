@@ -1,13 +1,14 @@
 package com.learn.spring.mybatisservice.entity;
 
 /**
- * @project mybatis-service
- * @uthor kumar
- * @since 7/25/2020
+ * @author saurav kumar
+ * @since 8/8/2020
  */
 public class Heading {
     private String mainText;
+
     private String subtitle;
+
     private String summary;
 
     public String getMainText() {

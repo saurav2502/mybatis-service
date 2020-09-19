@@ -8,8 +8,8 @@ public class PageResult<T> {
     public static final int DEFAULT_MAX_NO_OF_ROWS = 1000;
     private long totalElements;
     private PageVO pageVO;
-    private List<T> elements;
-    private Class <T> clazz;
+    private final List<T> elements;
+    private final Class <T> clazz;
 
     public PageResult(List<T> elements, PageVO pageVO,Class clazz) {
         this.elements = elements;

@@ -41,7 +41,7 @@ public class MybatisController
 
     private static final Logger logger = LoggerFactory.getLogger(MybatisController.class);
 
-    private UserService userService;
+    private final UserService userService;
 
     @Value("${outputPath}")
     String outputPath;
@@ -212,7 +212,7 @@ public class MybatisController
     @GetMapping("/docs")
     public ResponseEntity<ResultResponse<User>> getUser(@RequestParam(value = "userId", required = true) String userId)
     {
-        logger.debug("Entering into getUser -> with userId: {}, userVal: {}", userId, userId.toString());
+        logger.debug("Entering into getUser -> with userId: {}, userVal: {}", userId, userId);
         User user = new User("Saurav", "saurav", 76767868L);
         ResultResponse<User> userInfos = new ResultResponse<>('S', "success", HttpStatus.OK, user);
         return ResponseEntity.ok(userInfos);
